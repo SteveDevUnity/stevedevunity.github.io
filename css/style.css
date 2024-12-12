@@ -51,6 +51,8 @@ nav ul li a:hover {
 main {
     padding: 2rem;
     text-align: center;
+    max-width: 1200px; /* Maximale Breite für den Hauptinhalt */
+    margin: 0 auto;
 }
 
 /* Button-Stil */
@@ -147,5 +149,64 @@ img {
 
     button {
         padding: 0.5rem 1.5rem;
+    }
+}
+
+/* Anpassungen für größere Bildschirme */
+@media (min-width: 1024px) {
+    /* Layout-Änderungen für größere Monitore */
+    header h1 {
+        font-size: 3rem;
+    }
+
+    nav ul {
+        gap: 40px;
+    }
+
+    main {
+        padding: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        padding: 1rem 3rem;
+    }
+
+    form {
+        max-width: 800px;
+        margin: 40px auto;
+    }
+
+    /* Zwei Spalten Layout für Projekte oder Skills */
+    .projects, .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+        gap: 2rem;
+        justify-items: center;
+    }
+
+    .projects .project, .skills .skill {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Für noch größere Bildschirme, wie Full-HD */
+@media (min-width: 1440px) {
+    main {
+        max-width: 1200px;
+    }
+
+    .projects, .skills {
+        grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+    }
+
+    h2 {
+        font-size: 3rem;
     }
 }
