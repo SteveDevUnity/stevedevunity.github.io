@@ -1,35 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
+
 <body>
-    <header>
-        <h1>My Projects</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header>     
+            <nav> 
+                <ul class="sidebar">
+                    <li onclick=CloseSidebar()><a href="#" id="close-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5f5f5"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <ul>
+                    <li class="menu-button" onclick=ShowSidebar()><a href="#" id="hamburger-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg></a></li>  
+                    <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                    <li class="hideOnMobile"><a href="about.html">About</a></li>
+                    <li class="hideOnMobile"><a href="projects.html">Projects</a></li>
+                    <li class="hideOnMobile"><a href="contact.html">Contact</a></li>            
+                </ul>
+            </nav>         
     </header>
-    <main>
-        <section>
-            <h2>Project 1</h2>
-            <p>Description of your project. <a href="https://github.com/your-repo">View on GitHub</a></p>
-        </section>
-        <section>
-            <h2>Project 2</h2>
-            <p>Description of another project. <a href="https://github.com/your-repo">View on GitHub</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Steeve</p>
-    </footer>
+
+    <div class="main-container projects">
+
+        <section class="intro">
+            <h1>Projects</h1>
+            <p class="intro-text">
+                Here, I showcase the results of hands-on learning and technical creativity. From 3D asset design to scalable game mechanics 
+                and interactive UI, each project reflects my growth and problem-solving mindset as a Unity developer.
+
+                Take a look at my work below and explore the details behind each project.
+            </p>
+        </section>     
+        
+        
+        <div class="carousel-container">
+            <button class="carousel-btn left">
+                <img src="Icons/arrow_left.svg" alt="Previous">
+              </button>
+        
+            <div class="carousel-track">
+              <div class="carousel-card">
+                <img src="Images/Screenshot_test.png" alt="Wild West VR">
+                <h3>Wild West VR</h3>
+              </div>
+              <div class="carousel-card">
+                <img src="Images/Designer_blue.jpeg" alt="Space Battle">
+                <h3>Space Battle</h3>
+              </div>
+              <div class="carousel-card">
+                <img src="Images/Designer_red.jpeg" alt="Cyber Arena">
+                <h3>Cyber Arena</h3>
+              </div>
+            </div>
+        
+            <button class="carousel-btn right">
+                <img src="Icons/arrow_right.svg" alt="Next">
+              </button>
+          </div>
+
+        <footer>
+            <li><a href="contact.html#impressum" id="impressum-link">Impressum</a></li>
+            <p>© 2024 Stefan Risse.</p>
+        </footer>
+    </div>
+    
+
+    <script src="main.js"></script>
+    
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const track = document.querySelector(".carousel-track");
+      const rawCards = Array.from(track.children);
+
+     
+      const projects = [
+        { title: "Guns & Barrels VR", img: "Images/Screenshot_MainMenu.png", link: "wild_west_vr.html" },
+        { title: "Project 02", img: "Images/construction_01.jpeg", link: "space-battle.html" },
+        { title: "Project 03", img: "Images/construction_02.jpeg", link: "cyber-arena.html" },
+      ];
+
+      track.innerHTML = "";
+      projects.forEach(proj => {
+        const card = document.createElement("a");
+        card.href = proj.link;
+        card.className = "carousel-card";
+        card.innerHTML = `
+          <img src="${proj.img}" alt="${proj.title}">
+          <h3>${proj.title}</h3>
+        `;
+        track.appendChild(card);
+      });
+
+      const cards = document.querySelectorAll(".carousel-card");
+      let currentIndex = 0;
+
+      function updateClasses() {
+        cards.forEach(card => {
+          card.className = "carousel-card";
+          card.style.pointerEvents = "none";
+        });
+        const total = cards.length;
+
+        const center = cards[currentIndex];
+        center.classList.add("center");
+        center.style.pointerEvents = "auto";
+
+        const leftIndex = (currentIndex - 1 + total) % total;
+        const rightIndex = (currentIndex + 1) % total;
+
+        cards[leftIndex].classList.add("left");
+        cards[rightIndex].classList.add("right");
+      }
+
+      document.querySelector(".carousel-btn.left").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateClasses();
+      });
+
+      document.querySelector(".carousel-btn.right").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateClasses();
+      });
+
+      updateClasses();
+    });
+  </script>
+
 </html>

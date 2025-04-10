@@ -3,30 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steeve's Portfolio</title>
+    <title>Steves Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Steeve's Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header>     
+            <nav> 
+                <ul class="sidebar">
+                    <li onclick=CloseSidebar()><a href="#" id="close-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5f5f5"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <ul>
+                    <li class="menu-button" onclick=ShowSidebar()><a href="#" id="hamburger-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5f5f5"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg></a></li>  
+                    <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                    <li class="hideOnMobile"><a href="about.html">About</a></li>
+                    <li class="hideOnMobile"><a href="projects.html">Projects</a></li>
+                    <li class="hideOnMobile"><a href="contact.html">Contact</a></li>            
+                </ul>
+            </nav>         
     </header>
-    <main>
-        <section>
-            <h2>Welcome!</h2>
-            <p>Hi, I'm Steeve! I'm passionate about creating interactive experiences with Unity.</p>
-            <p>Explore my <a href="projects.html">projects</a> or learn more <a href="about.html">about me</a>.</p>
+
+    <div class="main-container home">
+
+        <section class="intro">
+            <h1>Welcome to my Portfolio!</h1>
+            <div class="Welcome_Image">
+                <img src="Images/Welcome_Transparent_02.png" alt="Welcome">
+              </div>
+            <p class="intro-text">Hi, I'm Stefan Risse – a Junior Unity Developer passionate about building interactive and immersive experiences.
+                I recently completed my first full game demo – a VR project for Oculus Quest 3 – where I handled everything from modeling 
+                and texturing to scripting and gameplay systems.
+                While the project focuses on VR, my goal is to grow as a versatile Unity developer across different areas of game 
+                and app development. Explore my portfolio and feel free to get in touch!</p>
+        </section>     
+        
+        
+
+        <section class="used-tools" >
+            <h3>My Toolkit:</h3>
+            
+            <div class="grid-container">
+                <div id="item1" class="grid-item">
+                    <div class="tool">
+                        <a href="https://unity.com/" target="_blank" title="Visit Unity's official website">
+                            <img src="Images/U_Logo_Small_Black_RGB_1C 1.png" alt="Unity Logo" class="logo unity-logo">
+                        </a>
+                    </div>
+                    <div class="bottom">
+                        <p>Unity *</p>
+                    </div>
+                </div>
+
+                <div id="item2" class="grid-item">
+                    <div class="tool">
+                        <a href="https://www.adobe.com/products/substance3d-painter.html" target="_blank" title="Visit Substance Painter's official website">
+                            <img src="Images/Adobe_Substance_3D_Painter_icon.png" alt="Substance Painter Logo" class="logo substance-logo">
+                        </a>
+                    </div>
+                    <div class="bottom">
+                        <p>Substance *</p>
+                    </div>
+                </div>
+
+                <div id="item3" class="grid-item">
+                    <div class="tool">
+                        <a href="https://www.blender.org/" target="_blank" title="Visit Blender's official website">
+                            <img src="Images/blender_logo.png" alt="Blender Logo" class="logo blender-logo">
+                        </a>
+                    </div>
+                    <div class="bottom">
+                        <p>Blender *</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="home-disclaimer">
+                <p>* Legal Disclaimer:</p>
+                <p>This portfolio is not affiliated with or endorsed by Unity Technologies, 
+                    the Blender Foundation, or Adobe Inc. The logos are displayed for informational purposes only.</p>
+            </div>
+
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Steeve</p>
-    </footer>
+
+        <footer>
+            <li><a href="contact.html#impressum" id="impressum-link">Impressum</a></li>
+            <p>© 2024 Stefan Risse.</p>
+        </footer>
+    </div>
+    
+
+    <script src="main.js"></script>
+    
+    
+
 </body>
+
+
+
 </html>

@@ -4,29 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
+
 <body>
-    <header>
-        <h1>Contact Me</h1>
-        <nav>
-            <ul>
+    <header>     
+        <nav> 
+            <ul class="sidebar">
+                <li onclick=CloseSidebar()><a href="#" id="close-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5f5f5"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
+
+            <ul>
+                <li class="menu-button" onclick=ShowSidebar()><a href="#" id="hamburger-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5f5f5"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg></a></li>  
+                <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                <li class="hideOnMobile"><a href="about.html">About</a></li>
+                <li class="hideOnMobile"><a href="projects.html">Projects</a></li>
+                <li class="hideOnMobile"><a href="contact.html">Contact</a></li>            
+            </ul>
+        </nav>      
     </header>
-    <main>
-        <section>
-            <h2>Contact Information</h2>
-            <p>If you'd like to get in touch, feel free to reach out via email:</p>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+
+            
+    <div class="main-container contact">
+        <section class="intro">
+          <h1>Contact</h1>
+          <div class="Contact_Image">
+            <img src="Images/Contact_Transparent.png" alt="Welcome">
+          </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Steeve</p>
-    </footer>
+
+        
+      
+        <div class="project-details container">
+                
+            <hr class="section-divider">
+
+         
+            <p class="contact-text">
+              I’m always open to new opportunities and connections – whether you're looking to discuss a Unity project, 
+              need a motivated developer, or just want to connect. Reach out via email or check out my GitHub profile.
+            </p>
+          
+            <hr class="section-divider">
+
+      
+        
+           <div class="project-section">
+            <h3>Email</h3>
+                <a class="mail-link" href="mailto:honor-art@outlook.com">
+                  <img src="Icons/mail_svg_yellow.svg" alt="Mail Icon" width="80" height="80">
+                </a>
+                <p class="mail-text"><strong>honor-art@outlook.com</strong></p>
+          </div>
+
+
+       
+          <div class="project-section">
+            <h3>Github</h3>
+            <a class="github-link" href="https://github.com/SteveDevUnity" target="_blank">
+                <img src="Icons/github-svg.svg" alt="GitHub Icon" width="80" height="80">
+              </a>
+              <p class="github-text">
+                <strong>
+                    <p class="github-text"><strong>Github Profile</strong></p>
+                </strong>
+              </p>
+          </div>
+            
+          <hr class="section-divider">
+
+            <section id="impressum">
+                <h3>Impressum</h3>
+                <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+                <p>Stefan Risse<br>
+                Bergstraße 25a<br>
+                76316 Malsch<br>
+                Deutschland</p>
+                
+                <p><strong>Vertreten durch:</strong><br>
+                Stefan Risse</p>
+                
+                <p><strong>Kontakt:</strong><br>
+                E-Mail: <a href="mailto:honor-art@outlook.com">honor-art@outlook.com</a><br>
+                Telefon: +49 0176 322 793 76</p>
+                
+                <p><strong>Haftungsausschluss (Disclaimer)</strong><br>
+                Alle Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Dennoch kann keine Haftung für die Richtigkeit, 
+                Vollständigkeit und Aktualität der Inhalte übernommen werden.</p>
+                
+                <p><strong>Urheberrecht:</strong><br>
+                Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem deutschen Urheberrecht. 
+                Jede Form der Verwertung außerhalb der engen Grenzen des Urheberrechts bedarf der vorherigen schriftlichen 
+                Zustimmung des jeweiligen Autors.</p>
+            </section>
+
+        </div>
+      
+
+        <div class="contact-footer">
+            <p>© 2024 Stefan Risse.</p>
+        </div>
+          
+        
+      </div>
+
+
+    <script src="main.js"></script>
+
 </body>
 </html>
