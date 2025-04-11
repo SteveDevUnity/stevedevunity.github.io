@@ -178,9 +178,9 @@ nav a:hover {
     margin-bottom: 1.5em;
 }
 
-.about-text-block p:first-of-type,
-.about-text-block p:nth-of-type(3),
-.about-text-block p:nth-of-type(5) {
+.about-text-block p:nth-of-type(2),
+.about-text-block p:nth-of-type(4),
+.about-text-block p:nth-of-type(6) {
     color: rgba(106, 105, 105, 0.863);
 }
 

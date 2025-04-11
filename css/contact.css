@@ -202,22 +202,37 @@
   }
   
   .mail-link img,
-  .github-link img {
+  .github-link img, 
+  .linked-in-link img {
     width: 48px;
     height: 48px;
     transition: transform 0.3s ease-in-out;
     margin-bottom: 10px;
   }
+
+  .linked-in-link img {
+    width: 56px;
+    height: 48px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+  }
+
+
+  .mail-link img {
+    width: 54px;
+    height: 54px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+  }
   
   .mail-link img:hover,
-  .github-link img:hover {
+  .github-link img:hover,
+  .linked-in-link img:hover {
     transform: scale(1.25);
     cursor: pointer;
   }
   
-  .github-text {
-    margin-top: 14px;
-  }
+  
   
   /* ----------- Impressum ----------- */
   #impressum {
@@ -313,9 +328,16 @@
         margin-bottom: 0px;       
     }
 
+    .project-details {
+      padding: 20px;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 6vw;
+      margin-right: 6vw;
+    }
 
     .contact-text {     
-        margin: 10px auto;    
+        margin: 10px 0px;    
       }
 
     #impressum {
