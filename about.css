@@ -1,0 +1,324 @@
+
+@font-face {
+    font-family: 'Standard'; 
+    src: url('Fonts/Ubuntu-Regular.ttf') format('woff2'),
+         url('Fonts/Ubuntu-Light.ttf') format('woff'),
+         url('Fonts/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+:root {
+    --primary-color: #1E1F26;
+    --secondary-color: #283655;
+    --text-color: #999;
+    --secondary-text-color: #b9b9b9;
+    --background-color: #D0E1F9;
+}
+
+/* GLOBAL RESET & BASICS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Standard', sans-serif;
+    color: var(--text-color);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: clamp(20px, 20vw, 30px);
+    line-height: 115%;
+    text-align: center;
+    margin-top: 5vw;
+    color: rgba(0, 0, 0, 0.863);
+}
+
+h3 {
+    font-size: clamp(10px, 10vw, 24px);
+    color: rgba(0, 0, 0, 0.863);
+}
+
+/* ----------------- HEADER & NAV ------------------ */
+header {
+    width: 100%;
+    z-index: 888;
+    background-color: rgb(28, 32, 43);
+    position: fixed;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav li {
+    height: 60px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: 'Standard', sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+nav a:hover {
+    color: rgb(148, 143, 143);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(28, 32, 43, 0.958);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+.hideOnMobile {
+    display: block;
+}
+
+/* ----------------- MAIN LAYOUT ------------------ */
+.main-container.about {
+    background: linear-gradient(to bottom, #2530a8, #3331b1);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+}
+
+.main-container.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(217, 217, 217, 0.937);
+    z-index: -1;
+}
+
+.intro {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-bottom: 20px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ----------------- ABOUT CONTENT ------------------ */
+.about-section {
+    max-width: 1000px;
+    margin-bottom: 20px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+}
+
+.about-text-block {
+    max-width: 900px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.863);
+}
+
+.about-text-block p {
+    margin-bottom: 1.5em;
+}
+
+.about-text-block p:nth-of-type(2),
+.about-text-block p:nth-of-type(4),
+.about-text-block p:nth-of-type(6) {
+    color: rgba(106, 105, 105, 0.863);
+}
+
+.float-image {
+    float: left;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1 / 1;
+    margin: 20px 20px 20px 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4e53577b;
+}
+
+/* ----------------- QUOTE ------------------ */
+.quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 3rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.quote span {
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-style: normal;
+    color: #666;
+}
+
+/* ----------------- FOOTER ------------------ */
+footer {
+    display: flex;
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    width: 80%;
+}
+
+footer a {
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 1.5;
+    color: gray;
+}
+
+footer p {
+    margin-top: 4vw;
+    color: black;
+}
+
+/* ----------------- RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+    .float-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+
+    .about-text-block {
+        padding: 0;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hideOnMobile {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 7vw;
+    }
+
+    .quote {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+
+    .about-section{
+        background-color: rgba(255, 255, 255, 0.14);
+        border-radius: 12px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+  }
+
+  /* --------- LANDSCAPE ON MOBILE SUPPORT --------- */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .hideOnMobile {
+      display: none;
+    }
+  
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  
+    .about-text-block {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  
+    .float-image {
+      float: none;
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 120px;
+      height: 120px;
+    }
+  
+    .quote {
+      font-size: 1.1rem;
+      padding: 0 10px;
+    }
+  
+    
+  }
+  
+

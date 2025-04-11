@@ -71,5 +71,22 @@ function ShowSidebar() {
   
     updateCarousel();
   });
+
+  
+document.addEventListener("click", function (event) {
+  const sidebar = document.querySelector(".sidebar");
+  const hamburger = document.querySelector(".menu-button");
+
+  
+  if (sidebar && sidebar.style.display === "flex") {
+    const clickedInsideSidebar = sidebar.contains(event.target);
+    const clickedOnHamburger = hamburger.contains(event.target);
+
+    if (!clickedInsideSidebar && !clickedOnHamburger) {
+      CloseSidebar();
+    }
+  }
+});
+
   
 
