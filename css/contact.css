@@ -201,9 +201,7 @@
     text-align: center;
   }
   
-  .mail-link img,
-  .github-link img, 
-  .linked-in-link img {
+  .github-link img {
     width: 48px;
     height: 48px;
     transition: transform 0.3s ease-in-out;
